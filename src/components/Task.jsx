@@ -13,7 +13,7 @@ function Task({ tasks, removeTask, checkTask }) {
                 <label className='checkbox-label'>{task.text}</label>
             </div>
 
-            <div class="title-bar-controls">
+            <div className="title-bar-controls">
                 <button aria-label="Close" onClick={() => removeTask(task.id)}></button>
             </div>
         </li>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TaskForm from './components/TaskForm'
 import Task from './components/Task';
 import FilterButtons from './components/FilterButtons';
@@ -8,6 +8,19 @@ import './TaskList.scss';
 function TaskList() {
     const [tasks, setTasks] = useState([]);
     const [filter, setFilter] = useState("all");
+
+    
+
+    useEffect(() => {
+        const storedTasks = window.localStorage.getItem("storedtasks");
+        if (storedTasks) {
+            setTasks(JSON.parse(storedTasks))
+        }
+    }, [])
+
+    useEffect(() => {
+        window.localStorage.setItem("storedtasks", JSON.stringify(tasks))
+    }, [tasks])
 
     const filteredTasks = tasks.filter((task) => {
         if (filter === "all") {
