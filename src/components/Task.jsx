@@ -1,21 +1,20 @@
 import React from 'react'
-import {RiCloseCircleLine} from 'react-icons/ri'
+import './Task.scss';
 
 function Task({ tasks, removeTask, checkTask }) {
     
     return tasks.map((task) => (
-        <li key={task.id} >
+        <li className='task-item' key={task.id} >
             <div onClick={() => checkTask(task.id)}>
-            <input
-            type='checkbox'
-            checked={task.status}
-            onChange={() => {}}/>
-            <p>{task.text}</p>
+                <input className='checkbox'
+                type='checkbox'
+                checked={task.status}
+                onChange={() => {}}/>
+                <label className='checkbox-label'>{task.text}</label>
             </div>
-            <div className='icons'>
-                <RiCloseCircleLine
-                onClick={() => removeTask(task.id)}
-                />
+
+            <div class="title-bar-controls">
+                <button aria-label="Close" onClick={() => removeTask(task.id)}></button>
             </div>
         </li>
     ))

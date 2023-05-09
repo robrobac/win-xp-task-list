@@ -1,5 +1,6 @@
 import React from 'react'
 import FilterButton from './FilterButton'
+import './FilterButtons.scss';
 
 function FilterButtons({filter, handleClick}) {
   return (

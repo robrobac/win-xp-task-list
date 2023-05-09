@@ -1,0 +1,17 @@
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.342);
+    padding: 2px 0;
+    font-weight: 600;
+
+    div:first-of-type {
+        width: 100%;
+    }
+}
+
+input[type=checkbox]+label {
+    width: 90%;
+    cursor: pointer;
+}
